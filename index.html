@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neighborhood Map</title>
+    <link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <center>
+        <header>
+                <i class="fa fa-map-marker"></i> My Neighbourhood Map
+                <i class="fa fa-location-arrow"></i></header>
+                </center>
+        <div id="mapofmine" class="map-container">
+            </div>
+            <center>
+           <div id="menubar">
+           <input id="filter" class="filter" type="search" data-bind="textInput: keyWord" placeholder="Search Here">
+           <ul class="list-group" style="cursor: pointer;">
+               <!-- ko foreach: pureLocations -->
+               <li class="list-group-item" data-bind="text: placeid, click: selectPlace"></li>
+               <!-- /ko -->
+               <li class="list-group-item"  data-bind="visible: pureLocations().length == 0" style="cursor:pointer;">Not Found</li>
+           </ul>
+           </div>
+           </center>
+    <script type='text/javascript' src='js/lib/jquery.min.js'></script>
+    <script type='text/javascript' src='js/lib/knockout.js'></script>
+    <script type='text/javascript' src='js/backend.js'></script>
+    <script type='text/javascript' src='js/places.js'></script>
+    <script type='text/javascript' src='js/seeModal.js'></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDO9ceCzDInM4-fix8venkPNhHwQ1VuWd8&callback=applimain"onerror="solveError();"></script>
+</body>
+</html>
